@@ -1,13 +1,18 @@
-﻿// For more information see https://aka.ms/fsharp-console-apps
-let calculateFedIncomeTaxxx salaryyy =
-    if salaryyy > 216511.0 then
-        salaryyy * 0.33
-    else
-        0.0 // No taxxx for salaryyy below or equal to $216,511
+﻿//For more information see https://aka.ms/fsharp-console-apps
+// Records: NBA Basketball Statistics
 
-let salaryyy = [75000.0; 48000.0; 120000.0; 190000.0; 300113.0; 92000.0; 36000.0]
+type Coach = {
+    Name: string
+    FormerPlayer: bool
+}
 
-let fedIncomeTaxxx = List.map calculateFedIncomeTaxxx salaryyy
+type Stats = {
+    Wins: int
+    Losses:int
+}
 
-printfn "Salaryyy: %A" salaryyy
-printfn "Fed Income Taxxx: %A" fedIncomeTaxxx
+type Team = {
+    Name: string
+    Coach: Coach
+    Stats: stats
+}
